@@ -16,15 +16,15 @@ extern char **environ;
 
 int execute_execve(char **comand);
 char *_strdup(char *str_last);
-int cont_word(char * palabra);
+int cont_word(char *palabra);
 char **token(char *buff_word);
 int _strcmp(const char *s1, const char *s2);
 char **create_array();
 char *search_path(char *comand);
-int cont_word(char * palabra);
+int cont_word(char *palabra);
 int error_getline(char *word);
 int file_exist(char **tok_args);
-int _strlenght(char * palabra);
+int _strlenght(char *palabra);
 char *_strncpy(char *path, char *comand);
 char * _execute(char **path_comand);
 void _free(char **w_get);
