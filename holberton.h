@@ -26,7 +26,7 @@ int error_getline(char *word);
 int file_exist(char **tok_args);
 int _strlenght(char *palabra);
 char *_strncpy(char *path, char *comand);
-char * _execute(char **path_comand);
+char *_execute(char **path_comand);
 void _free(char **w_get);
 
 #endif
