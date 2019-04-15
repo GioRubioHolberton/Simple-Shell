@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * main - entri point the shell
- * @void: no paramters accepted
+ * main - entri point the shell.
+ * @void: no paramters accepted.
  * Return: integer
  */
 int main(void)
