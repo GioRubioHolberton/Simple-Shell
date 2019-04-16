@@ -16,15 +16,15 @@ gcc -Wall -Werror -Wextra -pedantic * .c -o hsh
 ## All Files
 The following are the files used.
 
-Name | 
---- | ---
-shell.c | main file
-holberton.h | Libraries and prototypes
-environt.c | PATH search, pointer array 
-execute_execve.c | Function execute
-fun_strin.c | Functions for strings
-token.c | divide into boxes
-free.c | Free memory
+Name             | Description                | 
+----------       | ------------               |
+shell.c          | main file                  |
+holberton.h      | Libraries and prototypes   |
+environt.c       | PATH search, pointer array |
+execute_execve.c | Function execute           |
+fun_strin.c      | Functions for strings      |
+token.c          | divide into boxes          |
+free.c           | Free memory                |
 
 ## Functions used
 The following are the functions used.
