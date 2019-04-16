@@ -5,13 +5,13 @@ Simple shell that prints some linux commands.
 ## How to star
 
 1. Clone the repository
-git clone https://github.com/GioRubioHolberton/simple_shell.git
+* git clone https://github.com/GioRubioHolberton/simple_shell.git
 
 2. Compilation process
-gcc -Wall -Werror -Wextra -pedantic * .c -o hsh
+* gcc -Wall -Werror -Wextra -pedantic * .c -o hsh
 
 3. Execute
-./hsh
+* ./hsh
 
 ## All Files
 The following are the files used.
@@ -29,21 +29,21 @@ free.c           | Free memory                |
 ## Functions used
 The following are the functions used.
 
-Name | 
---- | ---
+Name           |
+---            |
 execute_execve | 
-_strdup |
-cont_word | 
-token |
-_strcmp |
-create_array |
-search_path |
-error_getline |
-file_exist |
-_strlenght |
-_strncpy |
-_execute |
-_free |
+_strdup        |
+cont_word      | 
+token          |
+_strcmp        |
+create_array   |
+search_path    |
+error_getline  |
+file_exist     |
+_strlenght     |
+_strncpy       |
+_execute       |
+_free          |
 
 ## Autors
 Oscar Vargas and Giovanny Rubio.
