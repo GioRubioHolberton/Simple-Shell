@@ -6,8 +6,7 @@
  */
 char *search_path(char *comand)
 {
-	char **get_array = NULL, *word, *result_execute = NULL;
-	int i;
+	char **get_array = NULL, *result_execute = NULL;
 
 	if (comand == NULL)
 	{
@@ -16,13 +15,8 @@ char *search_path(char *comand)
 	}
 	else
 	{
-		get_array = create_array();
-		for (i = 0; get_array[i] != NULL; i++)
-		{
-			word = _strncpy(get_array[i], comand);
-			get_array[i] = word;
-		}
-		result_execute = _execute(get_array);
+		get_array = create_array(comand);
+        	result_execute = _execute(get_array);
 		if (_strcmp(result_execute, "NO") == 0)
 		{
 			result_execute = comand;
@@ -53,14 +47,14 @@ char *_execute(char **path_comand)
  * create_array - function to create array pointers with the path
  * Return: array string with the path
  */
-char **create_array()
+char **create_array(char * comand)
 {
 	int i = 0, lenght_palabra = 0, cont = 0, j, y, iterator = 1;
 	char *aux, **str_tok, *palabra = "PATH", *word;
 	char *s2 = NULL;
 
 	lenght_palabra = _strlenght(palabra);
-	str_tok = malloc(1024 * sizeof(char));
+	str_tok = malloc(6 * sizeof(char*));
 
 
 	while (environ[i] != NULL)
@@ -71,17 +65,21 @@ char **create_array()
 			if (aux[j] == palabra[j])
 				cont++;
 		}
-		if (cont == lenght_palabra)
+		if (cont - 1 == lenght_palabra)
 		{
 			s2 = _strdup(environ[i]);
 			word =  strtok(s2, "=");
 			word = strtok(NULL, "=");
 			word = strtok(word, ":");
-			str_tok[0] = word;
+			s2 = _strncpy(word, "/");
+			str_tok[0] =  _strncpy(s2, comand);
+			free(s2);
 			while (word != NULL)
 			{
 				word = strtok(NULL, ":");
-				str_tok[iterator] = word;
+				s2 = _strncpy(word, "/");
+				str_tok[iterator] =  _strncpy(s2, comand);
+				free(s2);
 				iterator++;
 			}
 			break;

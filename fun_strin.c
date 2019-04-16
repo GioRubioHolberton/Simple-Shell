@@ -26,28 +26,34 @@ int _strcmp(const char *s1, const char *s2)
  * @comand: fingered command.
  * Return: pointer to destination
  */
-char *_strncpy(char *path, char *comand)
+char *_strncpy(char *s1, char *s2)
 {
-	int i, j;
-	char *new_string;
-	int lenght_path = _strlenght(path);
-	int lenght_comand = _strlenght(comand);
-	int suma = lenght_path + lenght_comand + 1;
+	char *p;
+	unsigned int i;
+	unsigned int size_s1, size_s2;
 
-	new_string = malloc(sizeof(char) * suma);
-	for (i = 0; i < lenght_path  && path[i] != '\0'; i++)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	for (size_s1 = 0; *(s1 + size_s1) && s1; size_s1++)
 	{
-		new_string[i] = path[i];
 	}
-
-	new_string[i] = '/';
-	i++;
-
-	for (j = 0; i < suma && comand[j] != '\0'; i++, j++)
+	for (size_s2 = 0; *(s2 + size_s2) && s2; size_s2++)
 	{
-		new_string[i] = comand[j];
 	}
-	return (new_string);
+	p =  malloc(sizeof(char) * (size_s1 + size_s2 + 1));
+	if (p == NULL)
+		return (NULL);
+	for (i = 0; i < size_s1 + size_s2; i++)
+	{
+		if (i < size_s1)
+			p[i] = *(s1 + i);
+		else
+			p[i] = *(s2 + i - size_s1);
+	}
+	p[i] = '\0';
+	return (p);
 }
 
 /**
@@ -70,24 +76,25 @@ int _strlenght(char *string_ptr)
  * @str_last: string that is being passed
  * Return: pointer
  */
-char *_strdup(char *str_last)
+char *_strdup(char *str)
 {
-	char *new_string;
-	int i;
-	int length;
+	char *copy;
+	unsigned int i = 0, j = 0;
 
-	if (str_last == NULL)
+	if (str == NULL)
+		return (NULL);
+	while (*(str + i))
+		i++;
+	copy = malloc(1024 * sizeof(char));
+	if (copy == NULL)
 	{
+		free(copy);
 		return (NULL);
 	}
-	length = _strlenght(str_last);
-	new_string = malloc((length + 1) * sizeof(const char));
-	i = 0;
-	while (i < length)
+	while (j <= i)
 	{
-		new_string[i] = str_last[i];
-		i++;
+		copy[j] = str[j];
+		j++;
 	}
-	new_string[i] = '\0';
-	return (new_string);
+	return (copy);
 }
