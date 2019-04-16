@@ -6,8 +6,9 @@
  */
 int main(void)
 {
-	char *buff_word, **w_get, *aux_word = NULL;
-	size_t bufsize;
+	char *buff_word = NULL, **w_get = NULL, *aux_word = NULL,
+		*str_ptr = "exit";
+	size_t bufsize = 0;
 	int i = 1, r_current = 0;
 
 	while (i != -1)
@@ -16,7 +17,7 @@ int main(void)
 		bufsize = 0;
 		signal(SIGINT, SIG_IGN);
 		i = getline(&buff_word, &bufsize, stdin);
-		if (_strcmp(buff_word, "exit") == 0)
+		if (_strcmp(buff_word, str_ptr) == 0)
 			break;
 		if (i != 1 && i != -1)
 		{
@@ -34,11 +35,11 @@ int main(void)
 				continue;
 			}
 			execute_execve(w_get);
-			_free(w_get);
-			free(buff_word);
+			/*free(buff_word);*/
 
 		}
 	}
+	_free(w_get); /*libera token*/
 	free(buff_word);
 	return (0);
 }

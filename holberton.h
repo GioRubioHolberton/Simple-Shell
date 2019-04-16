@@ -18,7 +18,7 @@ int execute_execve(char **comand);
 char *_strdup(char *str_last);
 int cont_word(char *palabra);
 char **token(char *buff_word);
-int _strcmp(const char *s1, const char *s2);
+int _strcmp(char *s1, char *s2);
 char **create_array();
 char *search_path(char *comand);
 int cont_word(char *palabra);
