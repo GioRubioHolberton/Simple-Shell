@@ -32,7 +32,7 @@ char *search_path(char *comand)
  */
 char *_execute(char **path_comand)
 {
-	int i;
+	unsigned int i = 0;
 
 	for (i = 0; path_comand[i] != NULL; i++)
 	{
@@ -66,7 +66,7 @@ char **create_array(char *comand)
 			if (environ[i][j] == palabra[j])
 				cont++;
 		}
-		if (cont  == lenght_palabra)
+		if (cont - 1  == lenght_palabra)
 		{
 			s2 = _strdup(environ[i]);
 			word =  strtok(s2, "=");

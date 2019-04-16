@@ -7,7 +7,7 @@
  */
 char _strcmp(char *str1, char *str2)
 {
-	if (_strlenght(str1) ==  _strlenght(str2))
+	if (_strlenght(str1) ==  _strlen(str2))
 	{
 		unsigned int i = 0;
 
@@ -99,4 +99,36 @@ char *_strdup(char *str)
 		j++;
 	}
 	return (copy);
+
+}
+
+char *_strcat(char *char1, char *char2)
+{
+	int des_word = 0;
+	int srclen = 0;
+	int i = 0, b = 0;
+
+	if (char2 == NULL)
+		char2 = "";
+	if (char1 == NULL)
+		char1 = "";
+	while (*(char1 + des_word) != '\0')
+	{
+		des_word++;
+	}
+	while (*(char2 + srclen) != '\0')
+	{
+		srclen++;
+	}
+	for (i = 0; i < srclen; i++)
+	{
+		if (*(char2 + i) != '\0')
+		{
+			b = des_word + i;
+			*(char1 + b) = *(char2 + i);
+		}
+	}
+	b = destlen + srclen;
+	*(char1 + b) = '\0';
+	return (char);
 }
