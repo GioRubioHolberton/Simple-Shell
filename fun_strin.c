@@ -5,9 +5,14 @@
  *@s2: Pointer two to comparate
  * Return: Always 0 (Success)
  */
-int _strcmp(const char *s1, const char *s2)
+int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
+
+	if(s1 == NULL || s2 == NULL)
+	{
+		return (1);
+	}
 
 	while (s1[i] != '\0' && s2[i] != '\0')
 	{
@@ -85,7 +90,7 @@ char *_strdup(char *str)
 		return (NULL);
 	while (*(str + i))
 		i++;
-	copy = malloc(1024 * sizeof(char));
+	copy = malloc(120 * sizeof(char));
 	if (copy == NULL)
 	{
 		free(copy);
