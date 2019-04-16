@@ -21,7 +21,6 @@ char *search_path(char *comand)
 		{
 			result_execute = comand;
 		}
-		free(get_array);
 		return (result_execute);
 	}
 }
