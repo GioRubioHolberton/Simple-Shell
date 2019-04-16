@@ -21,6 +21,7 @@ char *search_path(char *comand)
 		{
 			result_execute = comand;
 		}
+		free(get_array);
 		return (result_execute);
 	}
 }
@@ -57,7 +58,6 @@ char **create_array(char *comand)
 	lenght_palabra = _strlenght(palabra);
 	str_tok = malloc(100 * sizeof(char *));
 
-
 	while (environ[i] != NULL)
 	{
 		cont = 0;
@@ -66,10 +66,7 @@ char **create_array(char *comand)
 			if (environ[i][j] == palabra[j])
 				cont++;
 		}
-
-		/*	printf("Contador es: %d\n", cont);
-		 printf("lenght de palabra es: %d", lenght_palabra);
-		*/if (cont  == lenght_palabra)
+		if (cont  == lenght_palabra)
 		{
 			s2 = _strdup(environ[i]);
 			word =  strtok(s2, "=");
