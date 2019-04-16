@@ -1,0 +1,36 @@
+.\" Manpage for Simple Shell
+.\" Contact naxus1@gmail.com to correct errors or typos.
+
+.TH simple_shell 1  "1.0" "simple_shell man page"
+.SH SIMPLE SHELL
+\-  Command line interpreter (simple_shell)
+
+.SH SYNOPSIS
+$command argument
+
+.SH DESCRIPTION
+.B Simple_shell
+Implementation of the standard command line interpreter.display the output of the commands followed by a new prompt. Read lines from the user's terminal, execute some commands.
+
+.PP
+.SH Initial
+Our simple_shell starts by inspecting the first argument entered by the user, starts the search in the variable env, there it will verify if it is possible to access the indicated route, if it was not possible, it will try to access the route from the current directory, if it was not found the route will continue without launching excve, if you find any of the routes it will launch the execution of the file.
+
+.PP
+.SH Commands
+Our simple_shell reads the commands entered by the user. take the first argument as a command, this will be concatenated with the PATH environment variables, which was previously cut. Some commands that you can execute.
+
+ls 	: List the files in the directory
+env	: list the environment variables
+clear	: Clear the console screen
+pwd	: Get the to get path to the current file
+
+.PP
+.SH Search and Execution
+
+
+
+.SH AUTHOR
+Giovanny Rubio (759@holbertonschool.com)
+.PP
+Oscar Vargas(750@holbertonschool.com)
