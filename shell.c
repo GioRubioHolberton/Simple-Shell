@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * main - entri point the shell.
- * @void: no paramters accepted.
+ * main - entri point the shell
+ * @void: no paramters accepted
  * Return: integer
  */
 int main(void)
@@ -34,6 +34,7 @@ int main(void)
 				continue;
 			}
 			execute_execve(w_get);
+			_free(w_get);
 			free(buff_word);
 
 		}
