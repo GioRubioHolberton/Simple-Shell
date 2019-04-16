@@ -13,7 +13,7 @@ git clone https://github.com/GioRubioHolberton/simple_shell.git
 2. Compilation process
 
 ```bash
-gcc -Wall -Werror -Wextra -pedantic * .c -o hsh
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
 
 3. Execute
@@ -40,21 +40,17 @@ free.c           | Free memory                |
 
 The following are the functions used.
 
-Name           |
----            |
-execute_execve | 
-_strdup        |
-cont_word      | 
-token          |
-_strcmp        |
-create_array   |
-search_path    |
-error_getline  |
-file_exist     |
-_strlenght     |
-_strncpy       |
-_execute       |
-_free          |
+Name           | Description                      |  
+---            | ---                              |
+execute_execve | Execute command                  |
+_strdup        | Duplicate a string               |
+token          | Divide input of getline          |
+_strcmp        | Compare two strings              |
+create_array   | create array pointers            |
+search_path    | Search Path, Create array        |
+_strlenght     | Calculate the length of a string |
+_strncpy       | copy string                      |
+_free          | Free memory                      |
 
 ## Examples
 
