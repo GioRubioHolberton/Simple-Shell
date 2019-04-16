@@ -16,7 +16,7 @@ char *search_path(char *comand)
 	else
 	{
 		get_array = create_array(comand);
-        	result_execute = _execute(get_array);
+		result_execute = _execute(get_array);
 		if (_strcmp(result_execute, "NO") == 0)
 		{
 			result_execute = comand;
@@ -45,24 +45,24 @@ char *_execute(char **path_comand)
 
 /**
  * create_array - function to create array pointers with the path
+ * @comand: string
  * Return: array string with the path
  */
-char **create_array(char * comand)
+char **create_array(char *comand)
 {
 	int i = 0, lenght_palabra = 0, cont = 0, j, y, iterator = 1;
-	char *aux, **str_tok, *palabra = "PATH", *word;
+	char **str_tok, *palabra = "PATH", *word;
 	char *s2 = NULL;
 
 	lenght_palabra = _strlenght(palabra);
-	str_tok = malloc(6 * sizeof(char*));
+	str_tok = malloc(6 * sizeof(char *));
 
 
 	while (environ[i] != NULL)
 	{
-		aux = environ[i];
 		for (y = 0, j = 0; y < lenght_palabra; y++, j++)
 		{
-			if (aux[j] == palabra[j])
+			if (environ[i][j] == palabra[j])
 				cont++;
 		}
 		if (cont - 1 == lenght_palabra)
