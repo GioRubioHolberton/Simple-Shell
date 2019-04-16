@@ -22,8 +22,8 @@ int _strcmp(const char *s1, const char *s2)
 
 /**
  * _strncpy - copy string to new dest
- * @path: where the string is being assigned
- * @comand: fingered command.
+ * @s1: where the string is being assigned
+ * @s2: fingered command.
  * Return: pointer to destination
  */
 char *_strncpy(char *s1, char *s2)
@@ -73,7 +73,7 @@ int _strlenght(char *string_ptr)
 
 /**
  * _strdup - function returns pointer to new string
- * @str_last: string that is being passed
+ * @str: string that is being passed
  * Return: pointer
  */
 char *_strdup(char *str)
