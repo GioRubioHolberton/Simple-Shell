@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * token - function to delimit the path
- * @buff_word: word to cut
+ * token - function to delimit the input to getline.
+ * @buff_word: wpointer  to token
  * Return: word to token
  */
 char **token(char *buff_word)
@@ -16,8 +16,9 @@ char **token(char *buff_word)
 
 	token = malloc(50 * sizeof(char));
 
-	if (buff_word == NULL)
+	if (token == NULL)
 		return (NULL);
+
 	word = strtok(buff_word, delimit);
 	token[0] = word;
 
