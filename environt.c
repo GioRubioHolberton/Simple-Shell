@@ -20,7 +20,6 @@ char *search_path(char *comand)
 		result_execute = _execute(get_array);
 		if (_strcmp(result_execute, "NO") == 0)
 		{
-			/* result_execute = comand; */
 			free(get_array);
 			return ("NO");
 		}

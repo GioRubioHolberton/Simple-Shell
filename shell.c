@@ -12,7 +12,7 @@ int main(void)
 
 	while (i != -1)
 	{buff_word = NULL;
-		signal(SIGINT, SIG_IGN);
+		signal(SIGINT, ctrl_c);
 		i = getline(&buff_word, &bufsize, stdin);
 		if (i == -1)
 			break;
