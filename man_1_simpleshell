@@ -1,34 +1,59 @@
 .\" Manpage for Simple Shell
-.\" Contact naxus1@gmail.com to correct errors or typos.
+.\" Contact naxus1@gmail.com or 759@holbertonscholl.com to correct errors or typos.
+.TH simple_shell 1 "16 april 2019" "1.0" "simple_shell man page"
 
-.TH simple_shell 1  "1.0" "simple_shell man page"
-.SH SIMPLE SHELL
+.SH NAME
 \-  Command line interpreter (simple_shell)
 
 .SH SYNOPSIS
 $command argument
+.B ./hsh
 
 .SH DESCRIPTION
 .B Simple_shell
 Implementation of the standard command line interpreter.display the output of the commands followed by a new prompt. Read lines from the user's terminal, execute some commands.
+Command language interpreter that executes commands read from the standard input or from a file.
 
 .PP
-.SH Initial
+.SH INITIAL
 Our simple_shell starts by inspecting the first argument entered by the user, starts the search in the variable env, there it will verify if it is possible to access the indicated route, if it was not possible, it will try to access the route from the current directory, if it was not found the route will continue without launching excve, if you find any of the routes it will launch the execution of the file.
 
 .PP
-.SH Commands
+.SH COMMAND
 Our simple_shell reads the commands entered by the user. take the first argument as a command, this will be concatenated with the PATH environment variables, which was previously cut. Some commands that you can execute.
 
 ls 	: List the files in the directory
 env	: list the environment variables
 clear	: Clear the console screen
+
+.PP
+.SH ENVIROMENT
+
 pwd	: Get the to get path to the current file
 
 .PP
 .SH Search and Execution
 
+.SH PROMPT
+Our prompt is $jessiFer while the prompt is displayed you can type a command.
 
+.SH SIGNALS
+SIGINT is caught  and  handled  (so that the wait builtin is interruptible).
+
+.SH FILES
+	shell.c
+	holberton.h
+	environt.c
+	execute_execve.c
+	fun_strin.c
+	token.c
+	free.c
+
+.SH SHELL BUILTIN COMMANDS
+[\fBcommand\fP] [\fIarguments\fP]
+
+.SH MORE INFORMATION
+\README.md\fP - https://github.com/GioRubioHolberton/simple_shell.git
 
 .SH AUTHOR
 Giovanny Rubio (759@holbertonschool.com)
