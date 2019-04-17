@@ -1,4 +1,10 @@
 #include "holberton.h"
+/**
+ * _strcat - function to tokenize getline
+ * @dest: pointer to line passed for tokenization
+ * @src: pointer source
+ * Return: pointer to pointer of type char
+ */
 
 char *_strcat(char *dest, char *src)
 {

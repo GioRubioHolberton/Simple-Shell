@@ -14,7 +14,7 @@ char *search_path(char *comand)
 		result_execute = "NO";
 		return (result_execute);
 	}
-	else
+	else if (comand[0] != '/')
 	{
 		get_array = create_array(comand);
 		result_execute = _execute(get_array);
@@ -29,6 +29,7 @@ char *search_path(char *comand)
 		free(get_array);
 		return (aux);
 	}
+	return (comand);
 }
 /**
  * _execute - function to execute comman

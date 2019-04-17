@@ -6,7 +6,7 @@
  */
 int main(void)
 {char *buff_word = NULL, **w_get = NULL, *aux_word = NULL,
-		*str_ptr = "exit", *aux = NULL, *aux2 = NULL;
+		*str_ptr = "exit", *aux = NULL, *aux2 = NULL, *res = NULL;
 	size_t bufsize = 0;
 	int r_current = 0, i = 0, j = 0;
 
@@ -27,23 +27,23 @@ int main(void)
 		if (i != 1 && i != -1)
 		{w_get = token(buff_word);
 			aux_word = w_get[0];
-			w_get[0] = search_path(w_get[0]);
-			if (_strcmp(w_get[0], "NO") == 0)
-			{free(aux);
+			res = search_path(w_get[0]);
+			if (_strcmp(res, "NO") == 0)
+			{execute_execve(w_get);
+				free(aux);
 				free(buff_word);
 				free(w_get);
 				continue; }
-			if (_strcmp(w_get[0], aux_word) == 0)
+			if (_strcmp(res, aux_word) == 0)
 				r_current =  access(aux_word, F_OK);
-			if (_strcmp(w_get[0], aux_word) == 0 && r_current != 0)
+			if (_strcmp(res, aux_word) == 0 && r_current != 0)
 			{perror(" --Error:");
 				free(buff_word);
 				free(aux);
 				continue; }
+			w_get[0] = res;
 			execute_execve(w_get);
-			free(w_get[0]);
 			free(w_get); }
-		free(aux);
-		free(buff_word); }
+		free(aux); }
 	free(buff_word);
 	return (0); }
