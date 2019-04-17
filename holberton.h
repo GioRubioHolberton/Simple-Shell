@@ -13,7 +13,7 @@ extern char **environ;
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-
+char *_strcat(char *dest, char *src);
 int execute_execve(char **comand);
 char *_strdup(char *str_last);
 int cont_word(char *palabra);

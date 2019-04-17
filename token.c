@@ -6,7 +6,7 @@
  */
 char **token(char *buff_word)
 {
-	char delimit[] = " \t\r\n\v\f";
+	char delimit[] = " \t\r\n";
 	char *word;
 	char **token;
 	int iterator = 1;

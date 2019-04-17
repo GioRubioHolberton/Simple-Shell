@@ -26,7 +26,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 The following are the files used.
 
-Name             | Description                | 
+Name             | Description                |
 ----------       | ------------               |
 shell.c          | main file                  |
 holberton.h      | Libraries and prototypes   |
@@ -40,7 +40,7 @@ free.c           | Free memory                |
 
 The following are the functions used.
 
-Name           | Description                      |  
+Name           | Description                      |
 ---            | ---                              |
 execute_execve | Execute command                  |
 _strdup        | Duplicate a string               |
@@ -76,7 +76,7 @@ drwxrwxr-x  8 vagrant vagrant  4096 Apr 16 17:08 .git
 -rw-rw-r--  1 vagrant vagrant   555 Apr 16 14:41 token.c
 ```
 ```bash
-env 
+env
 XDG_SESSION_ID=8
 TERM=xterm-256color
 SHELL=/bin/bash
